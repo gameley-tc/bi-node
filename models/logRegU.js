@@ -9,6 +9,6 @@ module.exports = class LogRegU extends LogAccountRole {
     }
 
     toString() {
-        return util.toLogStr('log_reg', super.toUString(), this.devices.toString())
+        return util.toLogStr('log_reg_u', super.toUString(), this.devices.toString())
     }
 }
