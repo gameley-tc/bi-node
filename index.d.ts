@@ -528,16 +528,13 @@ declare module "@fitzix/bi-node" {
         toString(): string;
     }
 
-    class logLoginU {
-        constructor(params: logRegUParams, devices: devices)
-    }
 
     // LogShareIn
     interface logShareInParams extends logRole {
         // 分享点
         type: number;
         // 是否是新玩家 0否 1是
-        newPlayer: 0|1;
+        newPlayer: 0 | 1;
     }
 
     class LogShareIn {
