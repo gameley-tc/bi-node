@@ -3,6 +3,7 @@ const util = require('../utils')
 
 module.exports = class LogEquipPlayWay extends LogReason {
     constructor(params = {}) {
+        super(params)
         this.equipType = params.equipType || 0
         this.equipId = params.equipId || 0
         this.equipOldLevel = params.equipOldLevel || 0

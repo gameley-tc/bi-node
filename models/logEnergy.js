@@ -3,10 +3,11 @@ const util = require('../utils')
 
 module.exports = class LogEnergy extends LogReason {
     constructor(params = {}) {
-       this.oldEnergy = params.oldEnergy || 0
-       this.newEnergy = params.newEnergy || 0
-       this.addOrReduce = util.getChanged(this.newEnergy, this.oldEnergy)
-       this.energy = Math.abs(this.newEnergy - this.oldEnergy)
+        super(params)
+        this.oldEnergy = params.oldEnergy || 0
+        this.newEnergy = params.newEnergy || 0
+        this.addOrReduce = util.getChanged(this.newEnergy, this.oldEnergy)
+        this.energy = Math.abs(this.newEnergy - this.oldEnergy)
     }
 
     toString() {
