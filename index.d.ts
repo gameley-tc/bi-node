@@ -229,6 +229,11 @@ declare module "@fitzix/bi-node" {
         equipNewDegree: number;
     }
 
+    class logEquipDegree {
+        constructor(params: logEquipDegreeParams);
+        toString(): string;
+    }
+
     // logEquipLevel
     interface logEquipLevelParams extends logReason {
         // 装备类型
@@ -239,6 +244,11 @@ declare module "@fitzix/bi-node" {
         equipOldLevel: number;
         // 装备新的阶数
         equipNewLevel: number;
+    }
+
+    class logEquipLevel {
+        constructor(params: logEquipLevelParams);
+        toString(): string;
     }
 
     // logEquipPlayWay
@@ -255,6 +265,11 @@ declare module "@fitzix/bi-node" {
         playType: number;
     }
 
+    class logEquipPlayWay {
+        constructor(params: logEquipPlayWayParams);
+        toString(): string;
+    }
+
     // logFriends
     interface logFriendsParams extends logRole {
         // 玩家原来的好友数量
@@ -263,6 +278,11 @@ declare module "@fitzix/bi-node" {
         newFriendsNum: number;
         // 好友类型
         type: number;
+    }
+
+    class logFriends {
+        constructor(params: logFriendsParams);
+        toString(): string;
     }
 
     // logGamePattern
@@ -279,6 +299,11 @@ declare module "@fitzix/bi-node" {
         time: number;
     }
 
+    class logGamePattern {
+        constructor(params: logGamePatternParams);
+        toString(): string;
+    }
+
     // LogGuild
     interface logGuildParams extends logReason {
         // 日志类型 1->公会创建 2->公会解散
@@ -287,10 +312,20 @@ declare module "@fitzix/bi-node" {
         guildId: number;
     }
 
+    class LogGuild {
+        constructor(params: logGuildParams);
+        toString(): string;
+    }
+
     // LogGuildDonate
     interface logGuildDonateParams extends logReason {
         // 公会ID
         guildId: number;
+    }
+
+    class logGuildDonate {
+        constructor(params: logGuildDonateParams);
+        toString(): string;
     }
 
     // LogGuildLevel
@@ -313,12 +348,22 @@ declare module "@fitzix/bi-node" {
         guildLevel: number;
     }
 
+    class logGuildLevel {
+        constructor(params: logGuildLevelParams);
+        toString(): string;
+    }
+
     // LogGuildU
     interface logGuildUParams extends logReason {
         // 1->加入公会 2->退出公会
         logType: 1 | 2;
         // 公会ID
         guildId: number;
+    }
+
+    class logGuildU {
+        constructor(params: logGuildUParams);
+        toString(): string;
     }
 
     // LogItem
@@ -331,6 +376,11 @@ declare module "@fitzix/bi-node" {
         oldNum: number;
         // 本次变动的道具数量
         newNum: number;
+    }
+
+    class logItem {
+        constructor(params: logItemParams);
+        toString(): string;
     }
 
     // LogLevel
@@ -393,12 +443,22 @@ declare module "@fitzix/bi-node" {
         shop?: number;
     }
 
+    class logMoney {
+        constructor(params: logMoneyarams);
+        toString(): string;
+    }
+
     // LogNewTask
     interface logNewTaskarams extends logReason {
         // 步骤ID
         taskId: number;
         // 跟步骤ID对应的引导顺序
         orderId: number;
+    }
+
+    class logNewTask {
+        constructor(params: logEquipPlayWayParams);
+        toString(): string;
     }
 
     // logPay
@@ -434,12 +494,22 @@ declare module "@fitzix/bi-node" {
         dBeforeStoreNum: number;
     }
 
+    class logPay {
+        constructor(params: logPayarams);
+        toString(): string;
+    }
+
     // logPower
     interface logPowerarams extends logReason {
         // 玩家原来的战力
         oldPower: number;
         // 玩家新的战力
         newPower: number;
+    }
+
+    class logPower {
+        constructor(params: logPowerarams);
+        toString(): string;
     }
 
     // LogReg
@@ -451,6 +521,11 @@ declare module "@fitzix/bi-node" {
     interface logRegUParams {
         uuid: string;
         channelId?: number;
+    }
+
+    class logRegU {
+        constructor(params: logRegUParams, devices: devices);
+        toString(): string;
     }
 
     class logLoginU {
