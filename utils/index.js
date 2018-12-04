@@ -24,5 +24,15 @@ module.exports = {
   },
   toLogStr(...params) {
     return params.join('|')
+  },
+
+  getChanged(newNum, oldNum) {
+    if (newNum > oldNum) {
+      return 1
+    }
+    if (newNum == oldNum) {
+      return 2
+    }
+    return 0
   }
 }

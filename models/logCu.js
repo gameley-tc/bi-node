@@ -1,9 +1,11 @@
 const LogPlat = require('./base/logPlat')
+const config = require('../config')
 const util = require('../utils/index')
 
 module.exports = class LogCu extends LogPlat {
     constructor(params = {}) {
         super(params)
+        this.regionId = params.regionId || config.region
         this.payNum = params.payNum || 0
         this.payNotNum = params.payNotNum || 0
     }

@@ -6,7 +6,7 @@ module.exports = class LogRole extends LogPlat {
     constructor(params = {}) {
         super(params)
         this.regDt = params.regDt || util.now()
-        this.uid = params.uid
+        this.uid = params.uid || ''
         this.regionId = params.regionId || config.region
         this.level = params.level || 0
         this.reged = params.reged || 0
