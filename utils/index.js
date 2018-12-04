@@ -21,5 +21,8 @@ module.exports = {
   },
   now() {
     return this.dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss')
+  },
+  toLogStr(...params) {
+    return params.join('|')
   }
 }

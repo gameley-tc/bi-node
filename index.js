@@ -1,22 +1,17 @@
 const dgram = require('dgram')
-const logAccountRole = require('./models/LogAccountRole')
+const config = require('./config')
+const logAction = require('./models/logAction')
+
 
 module.exports = {
-    gameId: 1,
-    ip: "127.0.0.1",
-    port: 8088,
-    region: 1010001,
-
     init(option = {}) {
-        Object.assign(this, option)
+        config.init(option)
     },
-
-    send(biModel) {
+    sendX(biModel) {
         let client = dgram.createSocket("udp4")
-        client.send(biModel.toString(), this.port, this.ip, (err, bytes) => {
+        client.send(biModel.toString(), config.port, config.ip, (err, bytes) => {
             client.close()
         })
     },
-
-    logAccountRole
+    logAction
 }
