@@ -1,5 +1,6 @@
 const LogPlat = require('./logPlat')
 const config = require('../../config')
+const util = require('../../utils/index')
 
 module.exports = class LogAccountRole extends LogPlat {
     constructor(params = {}) {
@@ -12,6 +13,9 @@ module.exports = class LogAccountRole extends LogPlat {
     }
 
     toString() {
-        return [this.uuid, this.uid, this.platId, this.regionId, this.channelId, this.dt, this.level, this.reged].join('|')
+        return util.toLogStr(this.uuid, this.uid, this.platId, this.regionId, this.channelId, this.dt, this.level, this.reged)
+    }
+    toUString() {
+        return util.toLogStr(this.uuid, this.gameId, this.platId, this.channelId, this.dt)
     }
 }
