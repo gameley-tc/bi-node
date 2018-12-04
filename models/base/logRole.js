@@ -15,6 +15,6 @@ module.exports = class LogRole extends LogPlat {
     }
 
     toString() {
-        return [this.uuid, this.uid, this.platId, this.regionId, this.channelId, this.dt, this.level, this.reged, this.vip, this.payed].join('|')
+        return util.toLogStr(this.uuid, this.uid, this.platId, this.regionId, this.channelId, this.dt, this.level, this.reged, this.vip, this.payed)
     }
 }
