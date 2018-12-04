@@ -1,8 +1,10 @@
 const LogRole = require('./base/logRole')
 const util = require('../utils')
+const check = require('./check')
 
 module.exports = class LogFriends extends LogRole {
     constructor(params = {}) {
+        check.check('logFriends', params)
         super(params)
         this.oldFriendsNum = params.oldFriendsNum || 0
         this.newFriendsNum = params.newFriendsNum || 0

@@ -1,8 +1,10 @@
 const LogReason = require('./base/logReason')
 const util = require('../utils')
+const check = require('./check')
 
 module.exports = class LogMoney extends LogReason {
     constructor(params = {}) {
+        check.check('logMoney', params)
         super(params)
         this.oldMoney = params.oldMoney || 0
         this.newMoney = params.newMoney || 0

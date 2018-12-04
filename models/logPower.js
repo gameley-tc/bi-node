@@ -1,8 +1,10 @@
 const LogReason = require('./base/logReason')
 const util = require('../utils')
+const check = require('./check')
 
 module.exports = class LogPower extends LogReason {
     constructor(params = {}) {
+        check.check('logPower', params)
         super(params)
         this.oldPower = params.oldPower || 0
         this.newPower = params.newPower || 0

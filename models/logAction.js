@@ -1,8 +1,10 @@
 const LogAccountRole = require('./base/logAccountRole')
 const LogDevices = require('./base/logDevices')
+const check = require('./check')
 
 module.exports = class LogAction extends LogAccountRole {
     constructor(params = {}, devices = {}) {
+        check.check('logAction', params)
         super(params)
         this.devices = new LogDevices(devices)
         this.type = params.type || 1

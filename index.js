@@ -37,6 +37,9 @@ module.exports = {
     send(biModel) {
         let client = dgram.createSocket("udp4")
         client.send(biModel.toString(), config.port, config.ip, (err, bytes) => {
+            if (err != null) {
+                console.log('【BISDK】', '发送日志--->', biModel.toString())
+            }
             client.close()
         })
     },

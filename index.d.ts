@@ -117,7 +117,7 @@ declare module "@fitzix/bi-node" {
         type: number;
         // 具体动作
         // 0->主动触发打开视频窗口 1->看到视频窗口后主动关闭 2->点击视频播放视频 3->视频中途关闭 4->观看结束 5->获得奖励 6->没有可观看的广告
-        subType?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+        subType: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     }
 
     class logAdVideo {

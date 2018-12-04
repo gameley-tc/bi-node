@@ -1,8 +1,10 @@
 const LogReason = require('./base/logReason')
 const util = require('../utils')
+const check = require('./check')
 
 module.exports = class LogItem extends LogReason {
     constructor(params = {}) {
+        check.check('logItem', params)
         super(params)
         this.itemType = params.itemType || 0
         this.itemId = params.itemId || 0

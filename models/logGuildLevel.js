@@ -1,8 +1,10 @@
 const LogReason = require('./base/logReason')
 const util = require('../utils')
+const check = require('./check')
 
 module.exports = class LogGuildLevel extends LogReason {
     constructor(params = {}) {
+        check.check('logGuildLevel', params)
         super(params)
         // 公会ID
         this.guildId = params.guildId || 0
