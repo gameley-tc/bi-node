@@ -1,7 +1,7 @@
 const LogRole = require('./base/logRole')
 const util = require('../utils')
 
-module.exports = class LogLevel extends LogRole {
+module.exports = class LogPay extends LogRole {
     constructor(params = {}) {
         super(params)
         this.payType = params.payType || 0

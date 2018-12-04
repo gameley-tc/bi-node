@@ -1,7 +1,7 @@
 const LogReason = require('./base/logReason')
 const util = require('../utils')
 
-module.exports = class LogLevel extends LogNewTask {
+module.exports = class LogNewTask extends LogReason {
     constructor(params = {}) {
         super(params)
         this.taskId = params.taskId || 0

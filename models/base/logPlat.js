@@ -5,7 +5,7 @@ module.exports = class LogPlat {
     constructor(params = {}) {
         this.uuid = params.uuid || params.uid || ''
         this.channelId = params.channelId || config.channel
-        this.platId = this.channelId % 100
+        this.platId = params.params || this.channelId % 100
         this.dt = util.now()
     }
 }

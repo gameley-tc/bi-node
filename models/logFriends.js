@@ -7,7 +7,7 @@ module.exports = class LogFriends extends LogRole {
         this.oldFriendsNum = params.oldFriendsNum || 0
         this.newFriendsNum = params.newFriendsNum || 0
         this.addOrReduce = util.getChanged(this.newFriendsNum, this.oldFriendsNum)
-        this.friendsNum = Math.abs(this.newFriendsNum = this.oldFriendsNum)
+        this.friendsNum = Math.abs(this.newFriendsNum - this.oldFriendsNum)
         this.type = params.type || 0
     }
 

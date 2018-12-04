@@ -8,7 +8,7 @@ module.exports = class LogEquipPlayWay extends LogReason {
         this.equipId = params.equipId || 0
         this.equipOldLevel = params.equipOldLevel || 0
         this.equipNewLevel = params.equipNewLevel || 0
-        this.equipLevel = Math.abs(this.equipNewLevel = this.equipOldLevel)
+        this.equipLevel = Math.abs(this.equipNewLevel - this.equipOldLevel)
         this.playType = params.playType || 0
     }
 

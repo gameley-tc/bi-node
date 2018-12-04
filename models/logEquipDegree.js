@@ -8,7 +8,7 @@ module.exports = class LogEquipDegree extends LogReason {
         this.equipId = params.equipId || 0
         this.equipOldDegree = params.equipOldDegree || 0
         this.equipNewDegree = params.equipNewDegree || 0
-        this.equipDegree = Math.abs(this.equipNewDegree = this.equipOldDegree)
+        this.equipDegree = Math.abs(this.equipNewDegree - this.equipOldDegree)
     }
 
     toString() {

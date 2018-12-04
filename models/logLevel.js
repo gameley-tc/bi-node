@@ -6,7 +6,7 @@ module.exports = class LogLevel extends LogReason {
         super(params)
         this.heroId = params.heroId || ''
         this.newLevel = params.newLevel || 0
-        this.num = params.num || 0
+        this.num = Math.abs(this.newLevel - this.level)
     }
 
     toString() {
