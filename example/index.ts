@@ -1,22 +1,8 @@
-# bi-node
-BI SDK for node
 
-# Usage
+// for js  use  
+// const bi = require('@fitzix/bi-node')
+import * as bi from '@fitzix/bi-node'
 
-- `npm i @fitzix/bi-node` `yarn add @fitzix/bi-node`
-- 引入库文件并初始化配置(只需在第一次使用时初始化一次)
-```js
-const bi = require('@fitzix/bi-node')
-bi.init({
-    game: 1,
-    ip: "127.0.0.1",
-    port: 8888,
-    region: 1010001,
-    channel: 2006603,
-})
-```
-- 构造需要发送的日志结构(除必要参数外,剩余可根据日志结构表按需自行添加)
-```js
 let logAction = new bi.logAction({ uuid: 'sss', uid: 'ass', actionNumber: 23, actionType: 233, type: 1 })
 let logAdVideo = new bi.logAdVideo({ uid: '23', subType: 1, type: 12 })
 let logAppOnce = new bi.logAppOnce({ uuid: '2323', actionNumber: 2323 })
@@ -41,7 +27,7 @@ let logLoginU = new bi.logLoginU({ uid: '232' })
 let logMoney = new bi.logMoney({ uid: '2323', num: 23, moneyType: 23, newMoney: 23, oldMoney: 232 })
 let logNewTask = new bi.logNewTask({ uid: '232', orderId: 232323, taskId: 23 })
 let logPay = new bi.logPay({ uid: '2323', dBeforeStoreNum: 233, dNum: 2323, dPrice: 23, dStoreNum: 23, fPayFlag: 0, orderNumber: '23232232', payType: 1, totalNum: 2332 })
-let logPower = new bi.logPower({ uid: 'we23', newPower: 2323, oldPower: 223 })
+let logPower = new bi.logPower({ uid: 'we23', newPower: 233, oldPower: 223 })
 let logReg = new bi.logReg({uid: '232'})
 let logRegU = new bi.logRegU({uuid:'22323'})
 let logShareIn = new bi.logShareIn({uid:'23323', type:1212, newPlayer: 1})
@@ -76,4 +62,3 @@ bi.send(logRegU)
 bi.send(logShareIn)
 bi.send(logShareOut)
 bi.send(logTask)
-```

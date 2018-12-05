@@ -316,7 +316,7 @@ declare module "@fitzix/bi-node" {
         guildId: number;
     }
 
-    class LogGuild implements biModel {
+    class logGuild implements biModel {
         constructor(params: logGuildParams);
         toLogStr(): string;
     }
