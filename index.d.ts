@@ -1,6 +1,4 @@
 declare module "@fitzix/bi-node" {
-    // enums
-    type SocketType = "udp4" | "udp6";
 
     interface biModel {
         toString(): string;
@@ -11,6 +9,7 @@ declare module "@fitzix/bi-node" {
         ip: string;
         port: number;
         region: number;
+        channel: number;
     }
 
     interface devices {
@@ -62,7 +61,7 @@ declare module "@fitzix/bi-node" {
     }
 
     interface logReason extends logRole {
-        // 关联一次事件的唯一ID 
+        // 关联一次事件的唯一ID
         sequenceId?: string;
         // 货币变动一级原因
         reason?: string;
@@ -71,10 +70,10 @@ declare module "@fitzix/bi-node" {
     }
 
     function init(option: options): void;
-    function send(bimodel: biModel): void;
+
+    function send(biModel: biModel): void;
 
     // models
-
     // logAction
     interface logActionParams {
         uuid: string;
@@ -107,7 +106,8 @@ declare module "@fitzix/bi-node" {
     }
 
     class logAction implements biModel {
-        constructor(params: logActionParams, devices: devices);
+        constructor(params: logActionParams, devices?: devices);
+
         toString(): string;
     }
 
@@ -120,7 +120,7 @@ declare module "@fitzix/bi-node" {
         subType: 0 | 1 | 2 | 3 | 4 | 5 | 6;
     }
 
-    class logAdVideo {
+    class logAdVideo implements biModel {
         constructor(params: logAdVideoParams);
         toString(): string;
     }
@@ -138,8 +138,9 @@ declare module "@fitzix/bi-node" {
         actionNumber: number;
     }
 
-    class logAppOnce {
-        constructor(params: logAppOnceParams, devices: devices);
+    class logAppOnce implements biModel {
+        constructor(params: logAppOnceParams, devices?: devices);
+
         toString(): string;
     }
 
@@ -155,8 +156,9 @@ declare module "@fitzix/bi-node" {
         time: number;
     }
 
-    class logBattle {
+    class logBattle implements biModel {
         constructor(params: logBattleParams);
+
         toString(): string;
     }
 
@@ -168,8 +170,9 @@ declare module "@fitzix/bi-node" {
         failReason: string;
     }
 
-    class logCdKey {
+    class logCdKey implements biModel {
         constructor(params: logCdKeyParams);
+
         toString(): string;
     }
 
@@ -181,8 +184,9 @@ declare module "@fitzix/bi-node" {
         payNotNumber: number;
     }
 
-    class logCu {
+    class logCu implements biModel {
         constructor(params: logCuParams);
+
         toString(): string;
     }
 
@@ -192,7 +196,7 @@ declare module "@fitzix/bi-node" {
         newEnergy: number;
     }
 
-    class logEnergy {
+    class logEnergy implements biModel {
         constructor(params: logEnergyParams);
         toString(): string;
     }
@@ -212,7 +216,7 @@ declare module "@fitzix/bi-node" {
         num: number;
     }
 
-    class logEquip {
+    class logEquip implements biModel {
         constructor(params: logEquipParams);
         toString(): string;
     }
@@ -229,7 +233,7 @@ declare module "@fitzix/bi-node" {
         equipNewDegree: number;
     }
 
-    class logEquipDegree {
+    class logEquipDegree implements biModel {
         constructor(params: logEquipDegreeParams);
         toString(): string;
     }
@@ -246,7 +250,7 @@ declare module "@fitzix/bi-node" {
         equipNewLevel: number;
     }
 
-    class logEquipLevel {
+    class logEquipLevel implements biModel {
         constructor(params: logEquipLevelParams);
         toString(): string;
     }
@@ -265,7 +269,7 @@ declare module "@fitzix/bi-node" {
         playType: number;
     }
 
-    class logEquipPlayWay {
+    class logEquipPlayWay implements biModel {
         constructor(params: logEquipPlayWayParams);
         toString(): string;
     }
@@ -280,7 +284,7 @@ declare module "@fitzix/bi-node" {
         type: number;
     }
 
-    class logFriends {
+    class logFriends implements biModel {
         constructor(params: logFriendsParams);
         toString(): string;
     }
@@ -299,7 +303,7 @@ declare module "@fitzix/bi-node" {
         time: number;
     }
 
-    class logGamePattern {
+    class logGamePattern implements biModel {
         constructor(params: logGamePatternParams);
         toString(): string;
     }
@@ -312,7 +316,7 @@ declare module "@fitzix/bi-node" {
         guildId: number;
     }
 
-    class LogGuild {
+    class LogGuild implements biModel {
         constructor(params: logGuildParams);
         toString(): string;
     }
@@ -323,7 +327,7 @@ declare module "@fitzix/bi-node" {
         guildId: number;
     }
 
-    class logGuildDonate {
+    class logGuildDonate implements biModel {
         constructor(params: logGuildDonateParams);
         toString(): string;
     }
@@ -332,7 +336,7 @@ declare module "@fitzix/bi-node" {
     interface logGuildLevelParams {
         channelId?: number;
         regionId?: number;
-        // 关联一次事件的唯一ID 
+        // 关联一次事件的唯一ID
         sequenceId?: string;
         // 货币变动一级原因
         reason?: string;
@@ -348,7 +352,7 @@ declare module "@fitzix/bi-node" {
         guildLevel: number;
     }
 
-    class logGuildLevel {
+    class logGuildLevel implements biModel {
         constructor(params: logGuildLevelParams);
         toString(): string;
     }
@@ -361,7 +365,7 @@ declare module "@fitzix/bi-node" {
         guildId: number;
     }
 
-    class logGuildU {
+    class logGuildU implements biModel {
         constructor(params: logGuildUParams);
         toString(): string;
     }
@@ -378,19 +382,24 @@ declare module "@fitzix/bi-node" {
         newNum: number;
     }
 
-    class logItem {
+    class logItem implements biModel {
         constructor(params: logItemParams);
         toString(): string;
     }
 
     // LogLevel
-    interface logLevelarams extends logReason {
+    interface logLevelParams extends logReason {
         // 玩家之前等级
         level: number;
         // 人物ID
         heroId?: string;
         // 玩家新等级
         newLevel: number;
+    }
+
+    class logLevel implements biModel {
+        constructor(params: logLevelParams);
+        toString(): string;
     }
 
     // LogLogin
@@ -411,18 +420,18 @@ declare module "@fitzix/bi-node" {
         roleName?: string;
     }
 
-    class logLogin {
-        constructor(params: logLoginParams, devices: devices)
+    class logLogin implements biModel {
+        constructor(params: logLoginParams, devices?: devices)
     }
 
     // LogLoginU
 
-    class logLoginU {
-        constructor(params: logRole, devices: devices)
+    class logLoginU implements biModel {
+        constructor(params: logRole, devices?: devices)
     }
 
     // LogMoney
-    interface logMoneyarams extends logReason {
+    interface logMoneyParams extends logReason {
         // 原来的钱数
         oldMoney: number;
         // 新的钱数
@@ -443,26 +452,26 @@ declare module "@fitzix/bi-node" {
         shop?: number;
     }
 
-    class logMoney {
-        constructor(params: logMoneyarams);
+    class logMoney implements biModel {
+        constructor(params: logMoneyParams);
         toString(): string;
     }
 
     // LogNewTask
-    interface logNewTaskarams extends logReason {
+    interface logNewTaskParams extends logReason {
         // 步骤ID
         taskId: number;
         // 跟步骤ID对应的引导顺序
         orderId: number;
     }
 
-    class logNewTask {
-        constructor(params: logEquipPlayWayParams);
+    class logNewTask implements biModel {
+        constructor(params: logNewTaskParams);
         toString(): string;
     }
 
     // logPay
-    interface logPayarams extends logRole {
+    interface logPayParams extends logRole {
         // 充值类型 1->代币 2->月卡
         payType: 1 | 2;
         // 订单号
@@ -494,27 +503,27 @@ declare module "@fitzix/bi-node" {
         dBeforeStoreNum: number;
     }
 
-    class logPay {
-        constructor(params: logPayarams);
+    class logPay implements biModel {
+        constructor(params: logPayParams);
         toString(): string;
     }
 
     // logPower
-    interface logPowerarams extends logReason {
+    interface logPowerParams extends logReason {
         // 玩家原来的战力
         oldPower: number;
         // 玩家新的战力
         newPower: number;
     }
 
-    class logPower {
-        constructor(params: logPowerarams);
+    class logPower implements biModel {
+        constructor(params: logPowerParams);
         toString(): string;
     }
 
     // LogReg
-    class logReg {
-        constructor(params: logRole, devices: devices)
+    class logReg implements biModel {
+        constructor(params: logRole, devices?: devices)
     }
 
     // LogRegU
@@ -523,8 +532,8 @@ declare module "@fitzix/bi-node" {
         channelId?: number;
     }
 
-    class logRegU {
-        constructor(params: logRegUParams, devices: devices);
+    class logRegU implements biModel {
+        constructor(params: logRegUParams, devices?: devices);
         toString(): string;
     }
 
@@ -537,7 +546,7 @@ declare module "@fitzix/bi-node" {
         newPlayer: 0 | 1;
     }
 
-    class LogShareIn {
+    class LogShareIn implements biModel {
         constructor(params: logShareInParams)
     }
 
@@ -547,7 +556,7 @@ declare module "@fitzix/bi-node" {
         type: number;
     }
 
-    class LogShareOut {
+    class LogShareOut implements biModel {
         constructor(params: logShareOutParams)
     }
 
@@ -559,7 +568,7 @@ declare module "@fitzix/bi-node" {
         taskId: number;
     }
 
-    class LogTask {
+    class LogTask implements biModel {
         constructor(params: logTaskParams)
     }
 
