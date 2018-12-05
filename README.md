@@ -1,6 +1,9 @@
 # bi-node
 BI SDK for node
 
+# example
+see [Example](./example/index.js)
+
 # Usage
 
 - `npm i @fitzix/bi-node` `yarn add @fitzix/bi-node`
