@@ -10,5 +10,8 @@
   "devDependencies": {
     "@types/node": "^10.12.10"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "publish": "npm publish --access=public"
+  }
 }
