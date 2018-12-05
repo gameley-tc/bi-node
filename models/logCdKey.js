@@ -12,7 +12,7 @@ module.exports = class LogCdKey extends LogRole {
         this.failReason = params.failReason || ''
     }
 
-    toString() {
-        return util.toLogStr('log_cdkey', super.toString(), this.actionId, this.prize, this.failReason)
+    toLogStr() {
+        return util.toLogStr('log_cdkey', super.toLogStr(), this.actionId, this.cdkey, this.prize, this.failReason)
     }
 }

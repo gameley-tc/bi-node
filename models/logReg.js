@@ -10,7 +10,7 @@ module.exports = class LogReg extends LogRole {
         this.devices = new LogDevices(devices)
     }
 
-    toString() {
-        return util.toLogStr('log_reg', super.toString(), this.devices.toString())
+    toLogStr() {
+        return util.toLogStr('log_reg', super.toRegLogStr(), this.devices.toLogStr())
     }
 }

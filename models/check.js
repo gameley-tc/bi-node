@@ -14,7 +14,7 @@ module.exports = {
     logGamePattern: ['uid', 'logType', 'patternType', 'patternId', 'patternSubId', 'time'],
     logGuild: ['uid', 'logType', 'guildId'],
     logGuildDonate: ['uid', 'guildId'],
-    logGuildLevel: ['guildId', 'guildOldLevel', 'guildNewLevel', 'guildLevel'],
+    logGuildLevel: ['guildId', 'guildOldLevel', 'guildNewLevel'],
     logGuildU: ['uid', 'logType', 'guildId'],
     logItem: ['uid', 'itemType', 'itemId', 'oldNum', 'newNum'],
     logLevel: ['uid', 'level', 'newLevel'],

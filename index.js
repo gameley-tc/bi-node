@@ -1,8 +1,10 @@
 const dgram = require('dgram')
 const config = require('./config')
 const logAction = require('./models/logAction')
+const logAdVideo = require('./models/logAdVideo')
 const logAppOnce = require('./models/logAppOnce')
 const logBattle = require('./models/logBattle')
+const logCdKey = require('./models/logCdKey')
 const logCu = require('./models/logCu')
 const logEnergy = require('./models/logEnergy')
 const logEquip = require('./models/logEquip')
@@ -35,18 +37,21 @@ module.exports = {
         config.init(option)
     },
     send(biModel) {
-        // let client = dgram.createSocket("udp4")
-        let client = dgram.createSocket({type: "udp6"})
-        client.send(biModel.toString(), config.port, config.ip, (err, bytes) => {
+        let client = dgram.createSocket("udp4")
+        client.send(biModel.toLogStr(), config.port, config.ip, (err, bytes) => {
             if (err != null) {
-                console.log('【BISDK】', '发送日志--->', biModel.toString())
+                console.error('【BISDK】日志发送失败', err)
+            } else{
+                console.log('【BISDK】', '发送日志--->', biModel.toLogStr())
             }
             client.close()
         })
     },
     logAction,
+    logAdVideo,
     logAppOnce,
     logBattle,
+    logCdKey,
     logCu,
     logEnergy,
     logEquip,

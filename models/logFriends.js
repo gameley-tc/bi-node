@@ -13,7 +13,7 @@ module.exports = class LogFriends extends LogRole {
         this.type = params.type || 0
     }
 
-    toString() {
-        return util.toLogStr('log_friends', super.toString(),this.addOrReduce, this.oldFriendsNum, this.newFriendsNum, friendsNum, this.type)
+    toLogStr() {
+        return util.toLogStr('log_friends', super.toLogStr(),this.addOrReduce, this.oldFriendsNum, this.newFriendsNum, this.friendsNum, this.type)
     }
 }

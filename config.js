@@ -1,9 +1,9 @@
 const config = {
     game: 1,
     ip: "127.0.0.1",
-    port: 8088,
+    port: 8888,
     region: 1010001,
-    channel: 1221212,
+    channel: 2006603,
     init(option = {}) {
         Object.assign(this, option)
     }

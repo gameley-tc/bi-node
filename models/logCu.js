@@ -12,7 +12,7 @@ module.exports = class LogCu extends LogPlat {
         this.payNotNum = params.payNotNum || 0
     }
 
-    toString() {
+    toLogStr() {
         return util.toLogStr('log_cu', this.platId, this.regionId, this.channelId, this.dt, this.payNum, this.payNotNum)
     }
 }

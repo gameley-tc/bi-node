@@ -14,7 +14,7 @@ module.exports = class LogGamePattern extends LogReason {
         this.time = params.time || 0
     }
 
-    toString() {
-        return util.toLogStr('log_game_pattern', super.toString(), this.logType, this.patternType, this.patternId, this.patternSubId, this.time)
+    toLogStr() {
+        return util.toLogStr('log_game_pattern', super.toLogStr(), this.logType, this.patternType, this.patternId, this.patternSubId, this.time)
     }
 }

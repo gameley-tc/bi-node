@@ -10,7 +10,7 @@ module.exports = class LogShareIn extends LogRole {
         this.newPlayer = params.newPlayer || 0
     }
 
-    toString() {
-        return util.toLogStr('log_share_in', super.toString(), this.type, this.newPlayer)
+    toLogStr() {
+        return util.toLogStr('log_share_in', super.toLogStr(), this.type, this.newPlayer)
     }
 }

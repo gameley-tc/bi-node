@@ -9,7 +9,7 @@ module.exports = class LogAppOnce extends LogAccountRole {
         this.actionNumber = params.actionNumber || 0
     }
 
-    toString() {
-        return util.toLogStr('log_app_once', super.toString(), this.devices.toString(), this.actionNumber)
+    toLogStr() {
+        return util.toLogStr('log_app_once', super.toLogStr(), this.devices.toLogStr(), this.actionNumber)
     }
 }

@@ -14,7 +14,7 @@ module.exports = class LogEquipPlayWay extends LogReason {
         this.playType = params.playType || 0
     }
 
-    toString() {
-        return util.toLogStr('log_equip_playway', super.toString(), this.equipType, this.equipId, this.equipOldLevel, this.equipNewLevel, this.equipLevel, this.playType)
+    toLogStr() {
+        return util.toLogStr('log_equip_playway', super.toLogStr(), this.equipType, this.equipId, this.equipOldLevel, this.equipNewLevel, this.equipLevel, this.playType)
     }
 }

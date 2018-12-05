@@ -9,8 +9,8 @@ module.exports = class LogReason extends LogRole {
         this.subReason = params.subReason || ''
     }
 
-    toString() {
-        return util.toLogStr(super.toString(), this.sequenceId, this.reason, this.subReason)
+    toLogStr() {
+        return util.toLogStr(super.toLogStr(), this.sequenceId, this.reason, this.subReason)
     }
 
     toGuildString() {

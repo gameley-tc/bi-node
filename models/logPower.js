@@ -13,7 +13,7 @@ module.exports = class LogPower extends LogReason {
 
     }
 
-    toString() {
-        return util.toLogStr('log_power', super.toString(), this.addOrReduce, this.oldPower, this.newPower, this.power)
+    toLogStr() {
+        return util.toLogStr('log_power', super.toLogStr(), this.addOrReduce, this.oldPower, this.newPower, this.power)
     }
 }

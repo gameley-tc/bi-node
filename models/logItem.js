@@ -14,7 +14,7 @@ module.exports = class LogItem extends LogReason {
         this.num = Math.abs(this.newNum - this.oldNum)
     }
 
-    toString() {
-        return util.toLogStr('log_item', super.toString(), this.addOrReduce, this.itemType, this.itemId, this.oldNum, this.newNum, this.num)
+    toLogStr() {
+        return util.toLogStr('log_item', super.toLogStr(), this.addOrReduce, this.itemType, this.itemId, this.oldNum, this.newNum, this.num)
     }
 }

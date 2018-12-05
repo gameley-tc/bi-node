@@ -1,12 +1,12 @@
 {
   "name": "@fitzix/bi-node",
-  "version": "0.0.2-alpha",
+  "version": "0.1.0",
   "description": "bi sdk for node",
   "main": "index.js",
   "repository": "https://github.com/gameley-tc/bi-node",
   "author": "Fitzix <caojunkaiv@gmail.com>",
   "license": "MIT",
-  "types": "index.d.ts",
+  "typings": "index.d.ts",
   "devDependencies": {
     "@types/node": "^10.12.10"
   },

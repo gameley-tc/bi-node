@@ -17,7 +17,7 @@ module.exports = class LogLogin extends LogRole {
         this.roleName = params.roleName || ''
     }
 
-    toString() {
-        return util.toLogStr('log_login', super.toString(), this.devices.toString(), this.loginType, this.friendsNum, this.online, this.power, this.energy, this.guildId, this.roleName)
+    toLogStr() {
+        return util.toLogStr('log_login', super.toLogStr(), this.devices.toLogStr(), this.loginType, this.friendsNum, this.online, this.power, this.energy, this.guildId, this.roleName)
     }
 }

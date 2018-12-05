@@ -12,7 +12,7 @@ module.exports = class LogEnergy extends LogReason {
         this.energy = Math.abs(this.newEnergy - this.oldEnergy)
     }
 
-    toString() {
-        return util.toLogStr('log_energy', super.toString(), this.addOrReduce, this.oldEnergy, this.newEnergy, this.energy)
+    toLogStr() {
+        return util.toLogStr('log_energy', super.toLogStr(), this.addOrReduce, this.oldEnergy, this.newEnergy, this.energy)
     }
 }

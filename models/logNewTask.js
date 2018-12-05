@@ -10,7 +10,7 @@ module.exports = class LogNewTask extends LogReason {
         this.orderId = params.orderId || 0
     }
 
-    toString() {
-        return util.toLogStr('log_new_task', super.toString(), this.taskId, this.orderId)
+    toLogStr() {
+        return util.toLogStr('log_new_task', super.toLogStr(), this.taskId, this.orderId)
     }
 }

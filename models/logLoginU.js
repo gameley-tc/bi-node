@@ -10,7 +10,7 @@ module.exports = class LogLoginU extends LogAccountRole {
         this.devices = new LogDevices(devices)
     }
 
-    toString() {
-        return util.toLogStr('log_login_u', super.toUString(), this.devices.toString())
+    toLogStr() {
+        return util.toLogStr('log_login_u', super.toUString(), this.devices.toLogStr())
     }
 }

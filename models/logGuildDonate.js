@@ -9,7 +9,7 @@ module.exports = class LogGuildDonate extends LogReason {
         this.guildId = params.guildId || 0
     }
 
-    toString() {
-        return util.toLogStr('log_guild', super.toString(), this.guildId)
+    toLogStr() {
+        return util.toLogStr('log_guild_donate', super.toLogStr(), this.guildId)
     }
 }

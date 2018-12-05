@@ -10,7 +10,7 @@ module.exports = class LogTask extends LogReason {
         this.taskId = params.taskId || 0
     }
 
-    toString() {
-        return util.toLogStr('log_task', super.toString(), this.taskType, this.taskId)
+    toLogStr() {
+        return util.toLogStr('log_task', super.toLogStr(), this.taskType, this.taskId)
     }
 }

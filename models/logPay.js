@@ -20,7 +20,7 @@ module.exports = class LogPay extends LogRole {
 
     }
 
-    toString() {
-        return util.toLogStr('log_pay', super.toString(), this.payType, this.orderNumber, this.dPrice, this.dStoreNum, this.totalNum, this.fPayFlag, this.payChannelId, this.payId, this.payIdName, this.dNum, this.dBeforeStoreNum)
+    toLogStr() {
+        return util.toLogStr('log_pay', super.toPayLogStr(), this.payType, this.orderNumber, this.dPrice, this.dStoreNum, this.totalNum, this.fPayFlag, this.payChannelId, this.payId, this.payIdName, this.dNum, this.dBeforeStoreNum)
     }
 }

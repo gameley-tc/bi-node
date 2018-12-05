@@ -24,7 +24,7 @@ module.exports = class LogAction extends LogAccountRole {
         this.s6 = params.s6 || ''
     }
 
-    toString() {
-        return ['log_action', super.toString(), this.devices.toString(), this.type, this.actionType, this.actionNumber, this.g1,this.g2,this.g3,this.g4,this.g5,this.g6,this.s1,this.s2,this.s3,this.s4,this.s5,this.s6].join("|")
+    toLogStr() {
+        return ['log_action', super.toLogStr(), this.devices.toLogStr(), this.type, this.actionType, this.actionNumber, this.g1,this.g2,this.g3,this.g4,this.g5,this.g6,this.s1,this.s2,this.s3,this.s4,this.s5,this.s6].join("|")
     }
 }

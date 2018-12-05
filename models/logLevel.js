@@ -11,7 +11,7 @@ module.exports = class LogLevel extends LogReason {
         this.num = Math.abs(this.newLevel - this.level)
     }
 
-    toString() {
-        return util.toLogStr('log_level', super.toString(), this.heroId, this.newLevel, this.num)
+    toLogStr() {
+        return util.toLogStr('log_level', super.toLogStr(), this.heroId, this.newLevel, this.num)
     }
 }

@@ -11,7 +11,7 @@ module.exports = class LogGuildU extends LogReason {
         this.guildId = params.guildId || 0
     }
 
-    toString() {
-        return util.toLogStr('log_guild_u', super.toString(), this.logType, this.guildId)
+    toLogStr() {
+        return util.toLogStr('log_guild_u', super.toLogStr(), this.logType, this.guildId)
     }
 }

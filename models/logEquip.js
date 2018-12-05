@@ -12,7 +12,7 @@ module.exports = class LogEquip extends LogReason {
         this.num = params.num || 0
     }
 
-    toString() {
-        return util.toLogStr('log_equip', super.toString(), this.addOrReduce, this.equipType, this.equipId, this.num)
+    toLogStr() {
+        return util.toLogStr('log_equip', super.toLogStr(), this.addOrReduce, this.equipType, this.equipId, this.num)
     }
 }

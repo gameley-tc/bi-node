@@ -23,7 +23,7 @@ module.exports = class LogMoney extends LogReason {
         this.shop = params.shop || 0
     }
 
-    toString() {
-        return util.toLogStr('log_money', super.toString(), this.oldMoney, this.newMoney, this.money, this.num, this.addOrReduce, this.moneyType, this.itemIdName, this.itemType, this.itemId, this.shop)
+    toLogStr() {
+        return util.toLogStr('log_money', super.toLogStr(), this.oldMoney, this.newMoney, this.money, this.num, this.addOrReduce, this.moneyType, this.itemIdName, this.itemType, this.itemId, this.shop)
     }
 }

@@ -13,7 +13,7 @@ module.exports = class LogGuildLevel extends LogReason {
         this.guildLevel = Math.abs(this.guildNewLevel - this.guildOldLevel)
     }
 
-    toString() {
+    toLogStr() {
         return util.toLogStr('log_guild_level', super.toGuildString(), this.guildId, this.guildOldLevel, this.guildNewLevel, this.guildLevel)
     }
 }

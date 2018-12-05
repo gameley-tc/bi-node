@@ -10,15 +10,15 @@ module.exports = class LogDevices {
         this.cpuHardware = sysInfo.cpuHardware || ''
         this.gpuHardware = sysInfo.gpuHardware || ''
         this.memory = sysInfo.memory || 0
-        this.screenWidth = sysInfo.screenWidth || ''
-        this.screenHeight = sysInfo.screenHeight || ''
-        this.density = sysInfo.density || ''
+        this.screenWidth = sysInfo.screenWidth || 0
+        this.screenHeight = sysInfo.screenHeight || 0
+        this.density = sysInfo.density || 0
         this.glRender = sysInfo.glRender || ''
         this.glVersion = sysInfo.glVersion || ''
         this.phoneNumber = sysInfo.phoneNumber || ''
     }
 
-    toString() {
+    toLogStr() {
         return this.deviceId + '|' + this.ip + '|' + this.clientVersion + '|' + this.systemSoftware + '|' + this.systemHardware + '|' + this.comOperation + '|' + this.network + '|' + this.cpuHardware + '|' + this.gpuHardware + '|' +
             this.memory + '|' + this.screenWidth + '|' + this.screenHeight + '|' + this.density + '|' + this.glRender + '|' + this.glVersion + '|' + this.phoneNumber
     }

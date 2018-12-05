@@ -9,7 +9,7 @@ module.exports = class LogAdVideo extends LogRole {
         this.subType = params.subType || 0
     }
 
-    toString() {
-        return ['log_ad_video', super.toString(), this.type, this.subType].join('|')
+    toLogStr() {
+        return ['log_ad_video', super.toLogStr(), this.type, this.subType].join('|')
     }
 }
