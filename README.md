@@ -2,7 +2,7 @@
 BI SDK for node
 
 # example
-see [Example](./example/index.js)
+see [Example](./example/index.ts)
 
 # Usage
 
