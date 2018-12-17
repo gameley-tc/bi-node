@@ -5,6 +5,7 @@ const util = require('../utils/index')
 module.exports = class LogAppOnce extends LogAccountRole {
     constructor(params = {}, devices = {}) {
         super(params)
+        devices.deviceId = devices.deviceId || params.uuid || ''
         this.devices = new LogDevices(devices)
         this.actionNumber = params.actionNumber || 0
     }
